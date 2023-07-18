@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <title>Image Compression</title>
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light"
+     style="background-color: #e3f2fd;">
+    <div class="container-fluid"
+         style="padding-left: 100px !important; padding-right: 100px !important;">
+        <a style="font-size: 30px; font-weight: bold;"
+           class="navbar-brand" href="#">Image Compression</a>
+        <button class="btn" type="button" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="
+            <span>Fahd Erlangga Braja Musti<br>(52419155)<br></span>
+            <span>Fiela Junita Azhari<br>(52419433)<br></span>
+            <span>Gammaral Venerdi Dewaji<br>(52419564)<br></span>
+            <span>Patricia Matthea Jovena<br>(54419997)<br></span>
+            <span>Senna Annaba Ahmad<br>(55419968)<br></span>
+            <span>Syifa Hameza Hamid<br>(56419251)</span>">Info Kelompok
+
+        </button>
+    </div>
+</nav>
+<!-- Content -->
+<div class="container" style="padding-top: 20vh;">
+    <div class="row justify-content-center">
+        <!-- Form Lossy -->
+        <div class="col-5"
+             style="background-color: rgb(243, 243, 243); padding-top: 50px; padding-bottom: 50px; border-radius: 10px; margin-right: 20px; padding:40px">
+            <h3 style="text-align: center; padding-bottom: 20px;">Lossy
+                Compression JPG/JPEG</h3>
+            <form method="post" enctype="multipart/form-data" th:action="@{/upload-image-lossey}">
+                <div class="mb-3">
+                    <label for="formFileLossy" class="form-label">Default
+                        file input example</label>
+                    <input class="form-control" type="file" name="image" accept="image/jpeg" id="formFileLossy"
+                           required>
+                </div>
+                <button style="justify-content: center;"
+                        type="submit"
+                        class="btn btn-primary">Submit
+                </button>
+            </form>
+        </div>
+        <!-- Form Lossless -->
+        <div class="col-5"
+             style="background-color: rgb(243, 243, 243);padding-top: 50px; padding-bottom: 50px; border-radius: 10px;margin-left: 20px;padding:40px">
+            <h3 style="text-align: center; padding-bottom: 20px;">Lossless
+                Compression PNG</h3>
+            <form method="post" enctype="multipart/form-data" th:action="@{/upload-image-lossless}">
+                <div class="mb-3">
+                    <label for="formFileLossless" class="form-label">Default
+                        file input example</label>
+                    <input class="form-control" type="file" name="image" accept="image/png" id="formFileLossless"
+                           required>
+                </div>
+                <button style="text-align: center;" type="submit"
+                        class="btn btn-primary">Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+</html>
